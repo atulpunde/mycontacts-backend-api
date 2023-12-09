@@ -3,7 +3,9 @@ const express = require('express');
 require('dotenv').config()
 const contactsRoutes = require('./routes/contactRoutes');
 const errorHandler = require('./middleware/errorHandler');
+const connectDb = require('./config/dbConnection');
 
+connectDb();
 const app = express();
 
 // If you do "npm i dotenv" then you can set the "process.env.PORT", and use port from .env file
